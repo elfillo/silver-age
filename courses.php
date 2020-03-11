@@ -66,11 +66,6 @@
                         </button>
                     </li>
                 </ul>
-                <div class="directions-sidebar__action">
-                    <a href="<?php echo $courses_page->guid?>" class="btn btn_fill directions-sidebar__btn">
-                        Все направления
-                    </a>
-                </div>
             </div>
 
             <div class="directions-content">

@@ -5,6 +5,7 @@
 	add_action( 'carbon_fields_register_fields', 'courses_type' );
 	add_action( 'carbon_fields_register_fields', 'reviews_type' );
 	add_action( 'carbon_fields_register_fields', 'combo_type' );
+	add_action( 'carbon_fields_register_fields', 'about_docs' );
 	function courses_type(){
 		$courses_types = get_posts([
 			'post_type' => 'courses_types',
@@ -140,6 +141,22 @@
 					->add_options($courses_list),
 				Field::make( 'text', 'combo-price', 'Общая стоимость' ),
 				Field::make( 'text', 'combo-price--sale', 'Общая стоимость (со скидкой)' ),
+			));
+	}
+
+	function about_docs(){
+
+		$id = get_page_data('about')->ID;
+
+		Container::make( 'post_meta', 'Документы' )
+			->where( 'post_id', '=', $id )
+			->add_fields( array(
+				Field::make('text', 'about_docs_title', 'Заголовок перед документами'),
+				Field::make( 'complex', 'about_docs', 'Документы' )
+					->add_fields( 'simple_about_docs', 'Документы', array(
+						Field::make( 'text', 'about_docs-item--name', 'Название' ),
+						Field::make( 'file', 'about_docs-item--doc', 'Документ' )->set_value_type( 'url' )
+					) )
 			));
 	}
 ?>

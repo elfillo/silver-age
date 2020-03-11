@@ -10,7 +10,8 @@ function getBookingForm(){
 	$headers .= "From: От кого письмо <from@example.com>\r\n";
 	$headers .= "Reply-To: '.$sendTo.'\r\n";
 
-	$to      = "'.$sendTo.'";
+	//$to      = "'.$sendTo.'";
+	$to      = "filonenko0406@gmail.com";
 	$subject = 'Письмо с сайта';
 	$message = '';
 
