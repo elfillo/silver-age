@@ -211,6 +211,7 @@ template {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  outline: none;
 }
 
 *:before,
@@ -2054,7 +2055,7 @@ ul.accardeon {
   padding-top: 35px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .combo-tile__footer {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -2079,10 +2080,10 @@ ul.accardeon {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-left: auto;
+  margin-left: 6rem;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .combo-tile__prices {
     margin: 0 0 30px 0;
   }
@@ -2108,10 +2109,17 @@ ul.accardeon {
 .combo-tile__btn {
   color: #FF783E;
   border-color: #FF783E;
+  margin-left: auto;
 }
 
 .combo-tile__btn:hover {
   background: #FF783E;
+}
+
+@media screen and (max-width: 750px) {
+  .combo-tile__btn {
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -2451,6 +2459,7 @@ ul.accardeon {
   -o-transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  position: relative;
 }
 
 @media screen and (max-width: 520px) {
@@ -2481,6 +2490,7 @@ ul.accardeon {
 }
 
 .direction-tile__thumb img {
+  width: auto;
   height: 100%;
 }
 
@@ -2525,8 +2535,11 @@ ul.accardeon {
 }
 
 .direction-tile__title a {
-  text-decoration: none;
-  color: #4D545B;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .direction-tile__tags {
@@ -2681,9 +2694,6 @@ ul.accardeon {
   background-color: #F9F9F9;
 }
 
-.directions-sidebar__tab:focus {
-  outline-color: #37B954;
-}
 
 @media screen and (max-width: 1250px) {
   .directions-sidebar__tab {

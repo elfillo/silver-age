@@ -79,9 +79,7 @@
                                 </div>
                                 <div class="direction-tile__desc">
                                     <h2 class="display display_size_small direction-tile__title">
-                                        <a href="<?php echo $course->guid?>">
-                                            Курс "<?php echo $course->post_title?>"
-                                        </a>
+                                        Курс "<?php echo $course->post_title?>"
                                     </h2>
                                     <ul class="direction-tile__tags">
                                         <li class="direction-tile__tag">
@@ -113,6 +111,7 @@
                                         ?>
                                     </div>
                                 </div>
+                                <a href="<?php echo $course->guid?>"></a>
                             </li>
                         <?php endforeach; unset($course)?>
                       </ul>
@@ -167,7 +166,7 @@
                                                 <strike class="direction-tile__old-price">
                                                         '.$price.' Р.
                                                 </strike>
-                                                <div class="direction-tile__current-price">
+                                                <div class="direction-tile__current-price combo-tile__price_current">
                                                         '.$sale_price.' Р.
                                                 </div>
                                             ';
