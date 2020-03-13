@@ -140,9 +140,7 @@
                                       </div>
                                       <div class="direction-tile__desc">
                                           <h2 class="display display_size_small direction-tile__title">
-                                              <a href="<?php echo $course->guid?>">
-                                                  Курс "<?php echo $course->post_title?>"
-                                              </a>
+                                            Курс "<?php echo $course->post_title?>"
                                           </h2>
                                           <ul class="direction-tile__tags">
                                               <li class="direction-tile__tag">
@@ -174,6 +172,7 @@
 								                            ?>
                                           </div>
                                       </div>
+                                      <a href="<?php echo $course->guid?>"></a>
                                   </li>
 	                            <?php endforeach; unset($course)?>
                             </ul>
