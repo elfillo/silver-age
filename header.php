@@ -10,7 +10,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="description" content="" />
     <meta http-equiv="Cache-Control" content="no-cache">
-    <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="" />
+    <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="<?php echo get_template_directory_uri()?>/favicon.ico" />
     <title>Серебряный век</title>
 
     <link rel="preload" href="<?php get_uri('fonts/Gilroy-Regular.woff')?>" as="font" type="font/woff" crossorigin="anonymous" />
