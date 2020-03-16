@@ -33,6 +33,8 @@ Template Name: Главная
         'post_type' => 'review',
         'numberposts' => 3,
     ]);
+
+	$benefits = carbon_get_post_meta($post->ID, 'benefits');
 ?>
 <section class="promo-main">
     <div class="container">
@@ -59,88 +61,17 @@ Template Name: Главная
     <div class="container">
         <ul class="row benefits__row">
 
+            <?php foreach ($benefits as $benefit):?>
             <li class="benefit">
-                <img src="<?php get_uri('img/svg/i1.svg')?>" class="benefit__icon" alt="Иконка">
+                <img src="<?php echo $benefit['benefits-list--img']?>" class="benefit__icon" alt="Иконка">
                 <h2 class="display display_size_small benefit__title">
-                    Очное обучение
+	                <?php echo $benefit['benefits-list--title']?>
                 </h2>
                 <div class="benefit__text">
-                    <p>
-                        Выпускники получают <br>
-                        сертификаты об окончании <br>
-                        курсов
-                    </p>
+	                <?php echo $benefit['benefits-list--desc']?>
                 </div>
             </li>
-
-            <li class="benefit">
-                <img src="<?php get_uri('img/svg/i2.svg')?>" class="benefit__icon" alt="Иконка">
-                <h2 class="display display_size_small benefit__title">
-                    Гибкий график
-                </h2>
-                <div class="benefit__text">
-                    <p>
-                        Учитесь в удобное для Вас время, <br>
-                        по будням и выходным, утром, <br>
-                        днем и вечером.
-                    </p>
-                </div>
-            </li>
-
-            <li class="benefit">
-                <img src="<?php get_uri('img/svg/i3.svg')?>" class="benefit__icon" alt="Иконка">
-                <h2 class="display display_size_small benefit__title">
-                    Удобное <br>месторасположение
-                </h2>
-                <div class="benefit__text">
-                    <p>
-                        Мы находимся в самом <br>центре города.
-                    </p>
-                </div>
-            </li>
-
-            <li class="benefit">
-                <img src="<?php get_uri('img/svg/i1.svg')?>" class="benefit__icon" alt="Иконка">
-                <h2 class="display display_size_small benefit__title">
-                    Очное обучение
-                </h2>
-                <div class="benefit__text">
-                    <p>
-                        Выпускники получают <br>
-                        сертификаты об окончании <br>
-                        курсов
-                    </p>
-                </div>
-            </li>
-
-            <li class="benefit">
-                <img src="<?php get_uri('img/svg/i2.svg')?>" class="benefit__icon" alt="Иконка">
-                <h2 class="display display_size_small benefit__title">
-                    Очное обучение
-                </h2>
-                <div class="benefit__text">
-                    <p>
-                        Выпускники получают <br>
-                        сертификаты об окончании <br>
-                        курсов
-                    </p>
-                </div>
-            </li>
-
-            <li class="benefit">
-                <img src="<?php get_uri('img/svg/i3.svg')?>" class="benefit__icon" alt="Иконка">
-                <h2 class="display display_size_small benefit__title">
-                    Удобное расположение
-                </h2>
-                <div class="benefit__text">
-                    <p>
-                        Выпускники получают <br>
-                        сертификаты об окончании <br>
-                        курсов
-                    </p>
-                </div>
-            </li>
-
+            <?php endforeach;?>
     </div>
 </section>
 

@@ -7,12 +7,12 @@ function getBookingForm(){
 	$newLine = "<br/>";
 
 	$headers  = "Content-type: text/html; charset=utf-8 \r\n";
-	$headers .= "From: От кого письмо <from@example.com>\r\n";
+	//$headers .= "From: От кого письмо <from@example.com>\r\n";
 	$headers .= "Reply-To: '.$sendTo.'\r\n";
 
 	$to      = $sendTo;
 
-	$subject = 'Письмо с сайта';
+	$subject = 'Заявка с сайта Серебряный Век';
 	$message = '';
 
 	if(array_key_exists('consultName', $data)){
@@ -32,6 +32,12 @@ function getBookingForm(){
 		$message .= 'Вопросы по курсу: '.$data['courseName'].$newLine;
 		$message .= 'Имя: '.$data['userName'].$newLine;
 		$message .= 'Телефон: '.$data['userPhone'].$newLine;
+	}
+
+	if(array_key_exists('sertName', $data)){
+		$message .= 'Вопросы по подарочному сертификату'.$newLine;
+		$message .= 'Имя: '.$data['sertName'].$newLine;
+		$message .= 'Телефон: '.$data['sertPhone'].$newLine;
 	}
 
 	mail($to, $subject, $message, $headers);

@@ -6,6 +6,7 @@
 	add_action( 'carbon_fields_register_fields', 'reviews_type' );
 	add_action( 'carbon_fields_register_fields', 'combo_type' );
 	add_action( 'carbon_fields_register_fields', 'about_docs' );
+	add_action( 'carbon_fields_register_fields', 'index_benefits' );
 	function courses_type(){
 		$courses_types = get_posts([
 			'post_type' => 'courses_types',
@@ -156,6 +157,21 @@
 					->add_fields( 'simple_about_docs', 'Документы', array(
 						Field::make( 'text', 'about_docs-item--name', 'Название' ),
 						Field::make( 'file', 'about_docs-item--doc', 'Документ' )->set_value_type( 'url' )
+					) )
+			));
+	}
+
+	function index_benefits(){
+		$id = get_page_data('index')->ID;
+
+		Container::make( 'post_meta', 'Бонусы учебы у нас' )
+			->where( 'post_id', '=', $id )
+			->add_fields( array(
+				Field::make( 'complex', 'benefits', 'Бонус' )
+					->add_fields( 'benefits-list', 'Бонус', array(
+						Field::make( 'image', 'benefits-list--img', 'Иконка' )->set_value_type( 'url' )->set_width( 30 ),
+						Field::make( 'text', 'benefits-list--title', 'Заголовок' )->set_width( 70 ),
+						Field::make( 'rich_text', 'benefits-list--desc', 'Описание' )
 					) )
 			));
 	}
