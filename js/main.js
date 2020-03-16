@@ -1,5 +1,7 @@
 $(function() {
 
+    $('.js-mask-phone').mask('+7(000) 000-0000');
+
     var $mobileMunu = $('.js-mobile-menu');
     var $burgerMenu = $('.js-burger-menu');
     $burgerMenu.on('click', function(e) {

@@ -123,7 +123,7 @@
                         <input type="text" name="userName" class="form__input single-product-form__input" placeholder="Ваше имя*" data-required="">
                     </div>
                     <div class="form__half">
-                        <input type="text" name="userPhone" class="form__input single-product-form__input" placeholder="Ваш телефон*" data-required="">
+                        <input type="text" name="userPhone" class="form__input single-product-form__input js-mask-phone" placeholder="Ваш телефон*" data-required="">
                     </div>
                 </div>
                 <button type="submit" class="btn btn_fill form__submit single-product-form__submit js-submit">

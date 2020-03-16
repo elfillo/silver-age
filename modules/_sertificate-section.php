@@ -28,7 +28,7 @@
                 </div>
                 <form action="" method="POST" class="form js-form">
                     <input name="sertName" type="text" class="form__input sertificate-form__input" placeholder="Ваше имя*" data-required>
-                    <input name="sertPhone" type="text" class="form__input sertificate-form__input" placeholder="Ваш телефон*" data-required>
+                    <input name="sertPhone" type="text" class="form__input sertificate-form__input js-mask-phone" placeholder="Ваш телефон*" data-required>
                     <button type="submit" class="btn btn_fill form__submit sertificate-form__submit js-submit">
                         Заказать подарочный <br>сертификат
                     </button>

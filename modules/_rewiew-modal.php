@@ -17,7 +17,7 @@
                             placeholder="Ваше имя*" data-required>
                     </div>
                     <div class="form__half">
-                        <input type="text" class="form__input rewiew-modal__input" name="rewiewPhone"
+                        <input type="text" class="form__input rewiew-modal__input js-mask-phone" name="rewiewPhone"
                             placeholder="Ваш телефон*" data-required>
                     </div>
                 </div>

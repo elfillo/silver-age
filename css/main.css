@@ -1863,6 +1863,7 @@ ul.accardeon {
 .benefits .benefit {
   width: 33.33333%;
   margin-bottom: 80px;
+  padding: 0 30px;
 }
 
 @media screen and (max-width: 770px) {

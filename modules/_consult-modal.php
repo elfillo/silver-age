@@ -12,7 +12,7 @@
                 </div>
                 <form action="" class="form js-form">
                     <input type="text" class="form__input consult-modal__input" name="consultName" placeholder="Ваше имя*" data-required>
-                    <input type="text" class="form__input consult-modal__input" name="consultPhone" placeholder="Ваш телефон*" data-required>
+                    <input type="text" class="form__input consult-modal__input js-mask-phone" name="consultPhone" placeholder="Ваш телефон*" data-required>
                     <button type="submit" class="btn btn_fill form__submit consult-modal__submit js-submit">
                         Получить косультацию
                     </button>
