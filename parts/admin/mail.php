@@ -7,7 +7,7 @@ function getBookingForm(){
 	$newLine = "<br/>";
 
 	$headers  = "Content-type: text/html; charset=utf-8 \r\n";
-	$headers .= "From: Серебряный Век <from@example.com>\r\n";
+	$headers .= "From: Заявка с сайта Серебряный Век <from@example.com>\r\n";
 	$headers .= "Reply-To: '.$sendTo.'\r\n";
 
 	$to      = $sendTo;
