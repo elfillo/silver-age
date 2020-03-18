@@ -17,6 +17,10 @@ function getBookingForm(){
 
 	if(array_key_exists('consultName', $data)){
 		$message .= 'Заявка о кунсультации.'.$newLine;
+		if(array_key_exists('course_name', $data)){
+			$message .= 'Курс: '.$data['course_name'].$newLine;
+			$message .= 'Формат обучения: '.$data['course_type'].$newLine;
+		}
 		$message .= 'Имя: '.$data['consultName'].$newLine;
 		$message .= 'Телефон: '.$data['consultPhone'].$newLine;
 	}

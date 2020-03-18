@@ -28,7 +28,7 @@
                 </li>
             </ul>
 
-            <h1 class="display display_size_big page__title">
+            <h1 class="display display_size_big page__title" id="courseName">
                 <?php echo $post->post_title?>
             </h1>
 
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn_fill tab-form__btn js-open-modal" data-modal="consult">
+                                <button class="btn btn_fill tab-form__btn js-open-modal" data-modal="consult" onclick="bookingCourse('regular')">
                                     Получить консультацию
                                 </button>
                             </div>
@@ -113,7 +113,7 @@
 	                                    <?php echo carbon_get_post_meta($post->ID, 'personal_price');?> Р
                                     </div>
                                 </div>
-                                <button class="btn btn_fill tab-form__btn js-open-modal" data-modal="consult">
+                                <button class="btn btn_fill tab-form__btn js-open-modal" data-modal="consult" onclick="bookingCourse('private')">
                                     Получить консультацию
                                 </button>
                             </div>
@@ -132,3 +132,16 @@
     <?php include('modules/_consult-modal.php'); ?>
 
 <?php get_footer()?>
+<script>
+    function bookingCourse(type) {
+        let name = $("#courseName").text();
+        let typeName = type === 'private' ? 'частные занятия' : 'общий курс';
+        let inputType = `<input id="course_type--hidden" type="hidden" name="course_type" value="${typeName}"/>`;
+        let inputName = `<input id="course_name--hidden" type="hidden" name="course_name" value="${name}"/>`;
+        $('.consult-modal__inner form').find('#course_type--hidden').remove();
+        $('.consult-modal__inner form').find('#course_name--hidden').remove();
+
+        $('.consult-modal__inner form').prepend(inputType);
+        $('.consult-modal__inner form').prepend(inputName);
+    }
+</script>
