@@ -129,7 +129,7 @@
                               $com_courses = get_posts([
 	                              'post_type' => 'courses',
 	                              'numberposts' => -1,
-	                              'include' => get_post_meta($com->ID, 'course_list')
+	                              'include' => carbon_get_post_meta(85, 'course_list')
                               ]);
                             ?>
                             <ul class="combo-tile__body">
