@@ -129,14 +129,14 @@
                               $com_courses = get_posts([
 	                              'post_type' => 'courses',
 	                              'numberposts' => -1,
-	                              'include' => carbon_get_post_meta(85, 'course_list')
+	                              'include' => carbon_get_post_meta($com->ID, 'course_list')
                               ]);
                             ?>
                             <ul class="combo-tile__body">
 	                            <?php foreach ($com_courses as $course):?>
                                   <li class="direction-tile js-direction-tile">
                                       <div class="direction-tile__thumb">
-						                            <?php echo get_the_post_thumbnail($course->ID, [200, 150])?>
+						                   <?php echo get_the_post_thumbnail($course->ID, [200, 150])?>
                                       </div>
                                       <div class="direction-tile__desc">
                                           <h2 class="display display_size_small direction-tile__title">
